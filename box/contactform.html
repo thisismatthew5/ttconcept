@@ -1,0 +1,32 @@
+<?php
+
+if(isset($_POST['submit'])){
+    $name = $_POST['name'];
+    $mailfrom = $_POST['email'];
+    $subject = $_POST['subject'];
+    $message = $_POST['message'];
+
+
+    $mailto = "thisismatthew5@gmail.com";
+    $mail_subject = " New Form Submission";
+    $mail_body  = "User Name: $name. \n".
+                     "User Email: $mail_from.\n".
+                        "User Message: $message.\n";
+
+
+    $to = "thisismatthew5@gmail.com";
+
+    $headers    = "From: $mailto \r\n";
+
+    $headers    .= "Reply-To: $mailfrom \r\n";
+
+    $mail($to,$mail_subject,$mail_body,$headers);
+
+    header("location: contact.html");
+
+
+    
+}
+
+
+?>
